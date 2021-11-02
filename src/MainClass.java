@@ -11,10 +11,10 @@ public class MainClass {
             System.out.println("Napisz anagram:");
             Scanner scanner = new Scanner(System.in);
             str = scanner.nextLine();
-            AnagramRepository anagramRepository = AnagramRepository.initAnagramRepository();
-            HashMap<Anagram, Integer> repo = anagramRepository.getRepo();
-            Integer integer = repo.get(new Anagram(str));
-            System.out.println(integer);
+            Anagram anagram = new Anagram(str);
+            anagram.countNumbers();
+
+            System.out.println(anagram.toReadable());
         } while (!str.equals("dupa"));
     }
 }
